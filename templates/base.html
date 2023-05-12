@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    {% block head %}{% endblock %}
+    <title>Flask Budgeting Tool</title>
+  </head>
+  <body>
+    <div class="main_container flex_container">
+      <header class="main_header_box">
+        <nav>
+          <a href="#">About</a>
+          <a href="#">Dashboard</a> | {% if session["user_name"] %} Hello {{
+          session["user_name"] }}!
+          <a href="#">Logout</a>
+          {% else %}
+          <a href="#">Login</a>
+          Or
+          <a href="#">Signup</a>
+          {% endif %}
+        </nav>
+      </header>
+
+      {% block body %}{% endblock %}
+    </div>
+  </body>
+</html>

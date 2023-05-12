@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block body %}
+
+<p>Are you sure you want to delete entry {{ entry["id"] }}?</p>
+<form>
+  <input hidden name="entry_id" value="{{ entry['id'] }}" />
+
+  <!-- only pass the entry to api if the user confirm to delete -->
+  <input
+    type="submit"
+    value="Yes"
+    formmethod="POST"
+    formaction="/api/entry/delete"
+  />
+
+  <input type="submit" value="No" formaction="/" />
+</form>
+
+{% endblock %}

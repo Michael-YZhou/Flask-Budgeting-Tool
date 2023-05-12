@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block head %}
+<link rel="stylesheet" href="../static/style.css" />
+{% endblock %} {% block body %}
+
+<div class="summary_page_container flex_container">
+  <div class="section_entries flex_container">
+    <div class="entry_header flex_container">
+      <div>Transactions</div>
+      <div>Spent/Received</div>
+    </div>
+    <div class="entry_list_box flex_container">
+      {% for entry in entries %}
+      <div class="entry_box flex_container">
+        <div class="entry_description_box flex_container">
+          <div class="entry_id">Transaction ID: {{ entry["id"] }}</div>
+          <div class="entry_date">Date: {{ entry["date"] }}</div>
+          <div class="entry_type">Account: {{ entry["type"] }}</div>
+          <div class="entry_description">
+            Details: {{ entry["description"] }}
+          </div>
+          <div class="entry_user_id">
+            Created by user: {{ entry["user_id"] }}
+          </div>
+          <!-- adding edit & delete btn to every entry -->
+          <a class="links" href="/forms/entry/edit/{{ entry['id'] }}">Edit</a>
+          <a class="links" href="/forms/entry/delete/{{ entry['id'] }}"
+            >Delete</a
+          >
+        </div>
+        <div class="entry_amount_box">{{ entry["amount"] }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Form for adding entries to the db -->
+  <div class="add_entry_section">
+    <form
+      class="add_entry_form flex_container"
+      method="POST"
+      action="/api/create_new"
+    >
+      <label for="entry_type">Transaction Type</label>
+      <input id="entry_type" type="text" name="entry_type" required />
+
+      <label for="entry_amount">Gross Amount</label>
+      <input id="entry_amount" type="number" name="entry_amount" required />
+
+      <label for="entry_description">Description</label>
+      <input id="entry_description" type="text" name="entry_description" />
+
+      <label for="entry_date">Transaction Date</label>
+      <input id="entry_date" type="date" name="entry_date" />
+
+      <label for="entry_user">User ID</label>
+      <input id="entry_user_id" type="number" name="entry_user_id" />
+
+      <input type="reset" />
+      <input type="submit" />
+    </form>
+  </div>
+</div>
+
+{% endblock %}

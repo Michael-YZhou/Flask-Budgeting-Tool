@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block head %} {% endblock %} {% block body %}
+
+<form method="POST" action="/api/entry/add">
+  <label for="entry_type">Transaction Type</label>
+  <input id="entry_type" type="text" name="entry_type" required />
+
+  <label for="entry_amount">Gross Amount</label>
+  <input id="entry_amount" type="number" name="entry_amount" required />
+
+  <!-- <label for="entry_gst">GST</label>
+    <input id="entry_gst" name="entry_gst" /> -->
+
+  <label for="entry_description">Description</label>
+  <input id="entry_description" type="text" name="entry_description" />
+
+  <label for="entry_date">Transaction Date</label>
+  <input id="entry_date" type="date" name="entry_date" />
+
+  <label for="entry_user">User ID</label>
+  <input id="entry_user_id" type="number" name="entry_user_id" />
+
+  <input type="reset" />
+  <input type="submit" />
+</form>
+
+{% endblock %}
