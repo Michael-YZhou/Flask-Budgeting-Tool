@@ -22,10 +22,12 @@
             Created by user: {{ entry["user_id"] }}
           </div>
           <!-- adding edit & delete btn to every entry -->
-          <a class="links" href="/forms/entry/edit/{{ entry['id'] }}">Edit</a>
-          <a class="links" href="/forms/entry/delete/{{ entry['id'] }}"
-            >Delete</a
-          >
+          <div class="edit_and_delete_btns flex_container">
+            <a class="links" href="/forms/entry/edit/{{ entry['id'] }}">Edit</a>
+            <a class="links" href="/forms/entry/delete/{{ entry['id'] }}"
+              >Delete</a
+            >
+          </div>
         </div>
         <div class="entry_amount_box">{{ entry["amount"] }}</div>
       </div>
@@ -55,8 +57,10 @@
       <label for="entry_user">User ID</label>
       <input id="entry_user_id" type="number" name="entry_user_id" />
 
-      <input type="reset" />
-      <input type="submit" />
+      <div class="reset_and_submit_btns flex_container">
+        <input class="form_btn" type="reset" />
+        <input class="form_btn" type="submit" />
+      </div>
     </form>
   </div>
 </div>
