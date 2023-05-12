@@ -19,9 +19,9 @@ def sql_read(query, parameters=[]):
 
 def sql_write(query, parameters=[]):
     connection = psycopg2.connect(
-        host=os.getenv("HOST"),
-        user=os.getenv("USER"),
-        password=os.getenv("PASSWORD"),
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
         port=os.getenv("DB_PORT"),
         dbname=os.getenv("DB_NAME"),
     )
