@@ -87,3 +87,17 @@ def update_entry(
 
 def delete_entry(entry_id):
     sql_write("DELETE FROM entries WHERE id=%s", [int(entry_id)])
+
+
+def get_total_income():
+    total_income = sql_read("select sum(amount) from entries where amount > 0;")[0]
+    return {
+        "amount": str(total_income[0]),
+    }
+
+
+def get_total_expenses():
+    total_expenses = sql_read("select sum(amount) from entries where amount < 0;")[0]
+    return {
+        "amount": str(total_expenses[0]),
+    }

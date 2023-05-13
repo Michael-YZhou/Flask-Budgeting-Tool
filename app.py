@@ -17,8 +17,16 @@ def index():
 def transactions():
     # entries will contain a list of dict
     entries = utility.get_all_entries()
+    total_income = utility.get_total_income()
+    total_expenses = utility.get_total_expenses()
+    # balance = int(total_income[0]) - int(total_expenses[0])
     if session.get("user_id", ""):
-        return render_template("transactions.html", entries=entries)
+        return render_template(
+            "transactions.html",
+            entries=entries,
+            total_income=total_income,
+            total_expenses=total_expenses,
+        )
     else:
         return redirect("/login")
 

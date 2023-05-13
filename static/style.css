@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  /* background-color: rgb(242, 240, 222); */
 }
 
 .main_container {
@@ -17,6 +18,11 @@
 
 .flex_container {
   display: flex;
+}
+
+.flex_container_col {
+  display: flex;
+  flex-direction: column;
 }
 
 .main_header_box {
@@ -111,5 +117,6 @@
 
 .form_btn {
   width: 58px;
+  /* padding doesn't work */
   padding: 2px, 4px;
 }
