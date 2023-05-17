@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 import os
-from models import utility, user
+from model import utility, user
 
 
 app = Flask(__name__)

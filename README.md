@@ -20,6 +20,7 @@ To prioritize data security and privacy, the app implements an authentication sy
 - Python3
 - Flask
 - Jinja
+- PostgreSQL
 
 ## Improvements need to be made
 
