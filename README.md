@@ -24,7 +24,7 @@ To prioritize data security and privacy, the app implements an authentication sy
 
 ## Improvements need to be made
 
-- allow different actions based on user's authorisation type
+- Allow different actions based on user's authorisation type
 - Adding a filter for the transaction list
 - Adding pie chart for summarys
 - Use a CSS framework for better styling
