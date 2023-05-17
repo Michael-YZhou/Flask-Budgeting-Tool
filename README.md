@@ -8,7 +8,7 @@ This is a simple budgeting tool designed to help users track their income and ex
 
 ## User Interface
 
-![User Interface](/Interface.png)
+![User Interface](./static/interface.png)
 The web page presents users with a comprehensive list of all transactions, giving them a clear overview of their financial activities. Furthermore, the page provides a summary that calculates and displays the total income and expenses, allowing users to monitor their financial status with ease.
 
 To prioritize data security and privacy, the app implements an authentication system. This system validates user credentials to ensure that only registered users can access and interact with the database.

@@ -1,5 +1,5 @@
 import bcrypt
-from models import utility
+from model import utility
 
 
 def get_user_if_valid(email, plain_text_password):
